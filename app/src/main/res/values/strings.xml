@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lagos Java Devs</string>
+    <string name="error_message">Something is wrong. Try again after sometime.</string>
+    <string name="retry">Retry</string>
+    <string name="banner">Banner</string>
+    <string name="username">UserName</string>
+    <string name="location">Lagos, Nigeria</string>
+    <string name="github_profile_url">Github Profile Url</string>
+    <string name="share">Share</string>
+</resources>
