@@ -105,18 +105,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Chain chain) throws IOException {
-                Request request = chain.request();
-                HttpUrl url = request.url().newBuilder().addQueryParameter(
-                        "access_token",
-                        ACCESS_TOKEN
-                ).build();
-                request = request.newBuilder().url(url).build();
-                return chain.proceed(request);
-            }
-        }).build();
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
+//        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(new Interceptor() {
+//            @Override
+//            public okhttp3.Response intercept(Chain chain) throws IOException {
+//                Request request = chain.request();
+//                HttpUrl url = request.url().newBuilder().addQueryParameter(
+//                        "access_token",
+//                        ACCESS_TOKEN
+//                ).build();
+//                request = request.newBuilder().url(url).build();
+//                return chain.proceed(request);
+//            }
+//        }).build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
