@@ -35,7 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String BASE_URL = "https://api.github.com";
-    private static final String ACCESS_TOKEN = "406d56e915c8efb55c275b13066827044fddefda";
+    private static final String ACCESS_TOKEN = "250b793982b19382ae09dfd3558429291c9d4970";
     private static final String DEV_LIST = "dev_list";
     private static final String TAG = MainActivity.class.getSimpleName();
     private GithubApi api;
@@ -185,10 +185,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void refreshList(ArrayList<Item> lagosJavaDevelopersItems) {
-        lagosJavaDevsInAdapter.clear();
-        lagosJavaDevsInAdapter.addAll(lagosJavaDevelopersItems);
-        adapter.notifyDataSetChanged();
-        showRecyclerView();
+        if (lagosJavaDevelopersItems.size() != 0) {
+            lagosJavaDevsInAdapter.clear();
+            lagosJavaDevsInAdapter.addAll(lagosJavaDevelopersItems);
+            adapter.notifyDataSetChanged();
+            showRecyclerView();
+        } else {
+            showErrorLayout();
+        }
     }
 
     @Override
