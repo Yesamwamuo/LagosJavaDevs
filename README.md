@@ -7,7 +7,7 @@ Use the github api to search and display java developers in lagos
 2.) Show developer profile details with a share intent
 
 #Transition
-Shared Activity transition used
+Shared element transition used
 
 #Libraries used:
 
